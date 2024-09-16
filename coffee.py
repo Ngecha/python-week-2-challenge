@@ -31,5 +31,5 @@ class Coffee:
         # Calculates and returns the average price of the orders for this coffee
         if not self._orders:  
             return 0
-        total_price = sum(order.price for order in self._orders)  
-        return total_price / len(self._orders)  
+        total = sum(order.price for order in self._orders)  
+        return total/ len(self._orders)  

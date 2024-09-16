@@ -38,12 +38,12 @@ class Customer:
     @classmethod
     def most_aficionado(cls, coffee):
         # Class method to find the customer who has spent the most on a particular coffee
-        customers_spending = {}  
+        total = {}  
         for order in coffee.orders():
-            if order.customer in customers_spending:
-                customers_spending[order.customer] += order.price
+            if order.customer in total:
+                total[order.customer] += order.price
             else:
-                customers_spending[order.customer] = order.price
-        if customers_spending:
-            return max(customers_spending, key=customers_spending.get)
+                total[order.customer] = order.price
+        if total:
+            return max(total, key=total.get)
         return None
